@@ -11,12 +11,9 @@ class App{
     
     void init(){
         _appInterface->init(_appName, _data);
-        //std::cout << _data << std::endl;
     }
    
     int addToData(int userData){ return _appInterface->addToData(userData, _data);}
-    //int subToData(int userData){ return _appInterface->subToData(userData, data);}
-
     static App* createApp(Widget::AppInterface* interface, std::string name){
         if(!appInstance){
             appInstance =  new(std::nothrow) App(interface, name);
@@ -33,10 +30,10 @@ class App{
     static App* appInstance;
     Widget::AppInterface*  _appInterface;
     std::string _appName;
+
+
      void setData(int data){
-        //_appInterface->setData(data, _appName, appInstance);
         _data = data;
-        
     }
     App(Widget::AppInterface* appInterface, std::string appName):
     _appInterface(appInterface), 
