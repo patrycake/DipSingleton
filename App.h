@@ -11,6 +11,10 @@ class App{
     
     void init(){
         _appInterface->init(_appName, _data);
+        /* Or we can set data here instead
+        * std::cin << data;
+        * setData(data);
+        */
     }
    
     int addToData(int userData){ return _appInterface->addToData(userData, _data);}
